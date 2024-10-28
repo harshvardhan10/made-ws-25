@@ -47,7 +47,7 @@ valuetype ValidStadtteil oftype text {
 }
 
 constraint StartsWithVogelsang on text :
-    value matches /^Vogelsang-.*/;
+    value matches /^Vogelsang.*/;
 
 valuetype ValidGeoPoint oftype text {
     constraints : [
