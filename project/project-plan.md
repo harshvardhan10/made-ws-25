@@ -32,4 +32,4 @@ Short description of the DataSource.
 1. Example Issue [#1][i1]
 2. ...
 
-[i1]: https://github.com/jvalue/made-template/issues/1
+[i1]: https://github.com/harshvardhan10/made-ws-25/issues/1
