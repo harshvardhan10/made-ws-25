@@ -2,17 +2,17 @@
 
 ## Title
 <!-- Give your project a short title. -->
-Awesome MADE project.
+Assessing the Impact of Flash Floods on Local Economy and Housing Prices
 
 ## Main Question
 
 <!-- Think about one main question you want to answer based on the data. -->
-1. Does writing an example question help students write better project plans?
+1. How do frequent flash floods affect local housing prices and business revenues?
 
 ## Description
 
 <!-- Describe your data science project in max. 200 words. Consider writing about why and how you attempt it. -->
-XY is an important problem, because... This projects analyzes XY, using method A. The results can give insights into...
+The main aim of the project is to analyze the impact flash floods might have on housing prices. The aim is to compare the housing prices before and after the flash floods with the prices during the period when the flash floods occured. This could be further extended to compare the revenue of local businesses and analyze the effects that the flash floods might have on them. We will thus be able to see the varying impact that flash floods have on different businesses
 
 ## Datasources
 
