@@ -18,18 +18,28 @@ The main aim of the project is to analyze the impact flash floods might have on 
 
 <!-- Describe each datasources you plan to use in a section. Use the prefic "DatasourceX" where X is the id of the datasource. -->
 
-### Datasource1: ExampleSource
-* Metadata URL: https://mobilithek.info/offers/-6901989592576801458
-* Data URL: https://raw.githubusercontent.com/od-ms/radverkehr-zaehlstellen/main/100035541/2019-01.csv
+### Datasource1: CyberFlood1104
+* Metadata URL: https://zenodo.org/records/7545697
+* Data URL: https://zenodo.org/records/7545697/files/cyberFlood_1104.csv?download=1
 * Data Type: CSV
 
-Short description of the DataSource.
+Web-based crowdsourced flood database, developed at the University of Oklahoma (Wan et al., 2014). 203 flood events from 1998 to 2008 are retrieved with the latest version.
+
+Data attributes: ID, Year, Month, Day, Duration, fatality, Severity, Cause, Lat, Long, Country Code, Continent Code
+
+### Datasource2: HPIData
+* Metadata URL: https://www.fhfa.gov/sites/default/files/2023-09/HPI_specifications.xls
+* Data URL: https://www.fhfa.gov/hpi/download/monthly/hpi_master.csv
+* Data Type: CSV
+
+The FHFA House Price Index (HPI) is a broad measure of the movement of single-family house prices.  The HPI is a weighted, repeat-sales index, meaning that it measures average price changes in repeat sales or refinancings on the same properties. This information is obtained by reviewing repeat mortgage transactions on single-family properties whose mortgages have been purchased or securitized by Fannie Mae or Freddie Mac since January 1975. The data covers dates from 1991 till the present date
 
 ## Work Packages
 
 <!-- List of work packages ordered sequentially, each pointing to an issue with more details. -->
 
-1. Example Issue [#1][i1]
-2. ...
+1. Extracting data for Americas from the given datasets [#1][i1]
+2. Matching the timeline for the flood dataset and the HPI dataset [#2][i2]
 
 [i1]: https://github.com/harshvardhan10/made-ws-25/issues/1
+[i2]: https://github.com/harshvardhan10/made-ws-25/issues/2
