@@ -1,3 +1,10 @@
 .DS_Store
 /data/*
 !/data/.gitkeep
+/exercises/rhein-kreis-neuss-flughafen-weltweit.csv
+/exercises/stadt-neuss-herbstpflanzung-2023.csv
+/project/cyberFlood_1104.csv
+/project/HPI_dictionary.xls
+/project/hpi_master.csv
+/project/HPI_specifications.xls
+/project/prototyping.ipynb

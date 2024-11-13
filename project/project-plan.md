@@ -38,8 +38,6 @@ The FHFA House Price Index (HPI) is a broad measure of the movement of single-fa
 
 <!-- List of work packages ordered sequentially, each pointing to an issue with more details. -->
 
-1. Extracting data for Americas from the given datasets [#1][i1]
-2. Matching the timeline for the flood dataset and the HPI dataset [#2][i2]
+1. Preprocessing the dataset [#2][i1]
 
-[i1]: https://github.com/harshvardhan10/made-ws-25/issues/1
-[i2]: https://github.com/harshvardhan10/made-ws-25/issues/2
+[i1]: https://github.com/harshvardhan10/made-ws-25/issues/2
