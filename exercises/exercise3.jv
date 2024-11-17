@@ -1,0 +1,83 @@
+pipeline BondGDPPipeline {
+
+    BondGDPExtractor
+        -> BondGDPXLSXInterpreter
+        -> BondGDPSheetPicker
+        -> BondTableSelector
+        -> RenameHeaders
+        -> BondTableInterpreter
+        -> BondIssuanceLoader;
+
+    RenameHeaders ->
+        GDPPerCapitaTableInterpreter ->
+        GDPPerCapitaLoader;
+
+        block BondGDPExtractor oftype HttpExtractor {
+            url: "https://thedocs.worldbank.org/en/doc/7d852628d96b9411d43e5d36d5dff941-0050062022/original/Graphs-Chapter-5-02082022.xlsx";
+        }
+
+        block BondGDPXLSXInterpreter oftype XLSXInterpreter {}
+
+        block BondGDPSheetPicker oftype SheetPicker {
+            sheetName: "Figure S5.1.2";
+        }
+        
+        block BondTableSelector oftype CellRangeSelector {
+            select: range P2:S45;
+        }
+
+        block RenameHeaders oftype CellWriter {
+            at: range A1:D1;
+            write: ["Country Code", "Economy", "GDP per Capita", "Bond Issuance Share"];
+        }
+
+        block BondTableInterpreter oftype TableInterpreter {
+            header: true;
+            columns: [
+                "Country Code" oftype CountryCodeAlpha3,
+                "Bond Issuance Share" oftype validBIS
+            ];
+        }
+        
+        block BondIssuanceLoader oftype SQLiteLoader {
+            table: "bondIssuance";
+            file: "./country-stats.sqlite";
+        }
+
+        block GDPPerCapitaTableInterpreter oftype TableInterpreter {
+            header: true;
+            columns: [
+                "Country Code" oftype CountryCodeAlpha3,
+                "GDP per Capita" oftype validGC
+            ];
+        }
+
+        block GDPPerCapitaLoader oftype SQLiteLoader {
+            table: "gdpPerCapita";
+            file: "./country-stats.sqlite";
+        }
+}
+
+valuetype validGC oftype decimal {
+    constraints: [
+        PositiveDecimal
+    ];
+}
+
+publish constraint PositiveDecimal oftype RangeConstraint {
+    lowerBound: 0;
+    lowerBoundInclusive: false;
+}
+
+valuetype validBIS oftype decimal {
+    constraints: [
+        BetweenZeroAndOneInclusive
+    ];
+}
+
+publish constraint BetweenZeroAndOneInclusive oftype RangeConstraint {
+    lowerBound: 0;
+    lowerBoundInclusive: true;
+    upperBound: 1;
+    upperBoundInclusive: true;
+}
