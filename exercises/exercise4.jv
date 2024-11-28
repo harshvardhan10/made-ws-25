@@ -1,6 +1,8 @@
 pipeline Temperature {
 
-    TemperatureExtractor 
+    TemperatureExtractor
+        -> TemperatureArchiveInterpreter
+        -> TemperatureFilePicker
         -> TemperatureTextFile
         -> TemperatureCSV
         -> TemperatureCellRangeSelector
@@ -11,8 +13,16 @@ pipeline Temperature {
         -> BatteryTemperatureTransformer
         -> TemperatureLoader;
 
-    block TemperatureExtractor oftype LocalFileExtractor {
-        filePath: "./mowesta-dataset-20221107/data.csv";
+    block TemperatureExtractor oftype HttpExtractor {
+        url: "https://www.mowesta.com/data/measure/mowesta-dataset-20221107.zip";
+    }
+
+    block TemperatureArchiveInterpreter oftype ArchiveInterpreter {
+        archiveType: "zip";
+    }
+
+    block TemperatureFilePicker oftype FilePicker {
+        path: "./data.csv";
     }
 
     block TemperatureTextFile oftype TextFileInterpreter {}
