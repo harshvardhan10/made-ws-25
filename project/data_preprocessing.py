@@ -54,6 +54,6 @@ if __name__ == "__main__":
     hpi_df = extract_csv_from_url(hpi_data_url)
     # hpi dataset is already clean so no need to preprocess
 
-    flood_df.to_csv('../data/flood.csv', index=False)
-    hpi_df.to_csv('../data/hpi.csv', index=False)
+    flood_df.to_csv('data/flood.csv', index=False)
+    hpi_df.to_csv('data/hpi.csv', index=False)
 
