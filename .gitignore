@@ -18,3 +18,11 @@
 /exercises/mowesta-dataset-20221107.zip
 /exercises/temperatures.sqlite
 /.idea/*
+/project/__pycache__
+/exercises/GTFS
+/exercises/GTFS.zip
+/exercises/gtfs.sqlite
+/examples/gtfs-example.jv
+/examples/gtfs.sqlite
+/examples/sample-feed.zip
+/examples/sample-feed
