@@ -20,14 +20,18 @@ jobs:
         with:
           python-version: 3.11
 
+      # Set working directory
+      - name: Set working directory
+        run: cd main
+
       # Install additional dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r ./project/requirements.txt                            
+          pip install -r project/requirements.txt                            
 
       # Run test pipeline
       - name: Run test pipeline
         run: |
-          chmod +x ./project/tests.sh
+          chmod +x project/tests.sh
           ./project/tests.sh
