@@ -56,4 +56,3 @@ if __name__ == "__main__":
 
     flood_df.to_csv('data/flood.csv', index=False)
     hpi_df.to_csv('data/hpi.csv', index=False)
-    # test
